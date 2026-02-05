@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Student Info</title>
+
+<link rel="stylesheet" href="./css/student.css">
+<script src="./js/student.js"></script>
+
+</head>
+<body>
+
+<div class="container">
+    <h2>Student Information</h2>
+
+    <!-- Search -->
+    <div class="top">
+        <input type="text" id="search" placeholder="Search name">
+        <button onclick="searchStudent()">Search</button>
+    </div>
+
+    <!-- Buttons -->
+    <div class="filters">
+        <button onclick="showAll()">All</button>
+        <button onclick="filterPresent(true)">Present</button>
+        <button onclick="filterPresent(false)">Absent</button>
+        <button onclick="filterPassed(true)">Passed</button>
+        <button onclick="filterPassed(false)">Failed</button>
+    </div>
+
+    <!-- Table -->
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Sub1</th>
+                <th>Sub2</th>
+                <th>Sub3</th>
+                <th>Ave</th>
+                <th>Remarks</th>
+            </tr>
+        </thead>
+        <tbody id="tableBody"></tbody>
+    </table>
+</div>
+<script src="./js/student.js"></script>
+</body>
+</html>
