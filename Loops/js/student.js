@@ -1,3 +1,4 @@
+
 const students = [
   { name: "Ladybie", scores: [85, 90, 88], present: true },
   { name: "princess", scores: [70, 75, 72], present: false },
