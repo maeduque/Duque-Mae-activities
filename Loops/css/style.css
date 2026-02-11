@@ -7,7 +7,7 @@
 
 /* Body styling to replace the blue background and improve layout */
 body {
-  background-color: #a52c68; /* White background for readability */
+  background-color: #ffffff; /* White background for readability */
   font-family: Arial, sans-serif;
   padding: 30px 20px;
   max-width: 800px;
@@ -16,12 +16,12 @@ body {
 
 /* Page title styling */
 h1 {
-  color: lab(22.32% 40.64 28.55); /* Dark gray text */
+  color: #2d3748; /* Dark gray text */
   font-size: 2rem;
   text-align: center;
   margin-bottom: 25px;
   padding-bottom: 10px;
-  border-bottom: 2px solid hsl(214, 90%, 35%); /* Subtle divider under title */
+  border-bottom: 2px solid #e2e8f0; /* Subtle divider under title */
 }
 
 /* Button container to space buttons properly */
@@ -40,8 +40,8 @@ button {
   font-weight: 500;
   border: none;
   border-radius: 6px;
-  background-color: hwb(229 24% 19% / 0.11); /* Professional blue */
-  color: #ffffff;
+  background-color: #3182ce; /* Professional blue */
+  color: white;
   cursor: pointer;
   transition: background-color 0.2s ease;
 }
