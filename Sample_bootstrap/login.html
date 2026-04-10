@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Employee Info System - Login</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+body{
+    background: linear-gradient(135deg, #5f2c82, #49a09d);
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.login-card{
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(15px);
+    border-radius: 20px;
+    padding: 30px;
+    width: 380px;
+    color: white;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+}
+
+.login-card h3{
+    text-align:center;
+    font-weight:600;
+}
+
+.form-control{
+    background: rgba(255,255,255,0.2);
+    border: none;
+    color: white;
+}
+
+.form-control:focus{
+    background: rgba(255,255,255,0.25);
+    color: white;
+}
+
+label{
+    font-weight:500;
+}
+
+.btn-purple{
+    background: linear-gradient(135deg, #a855f7, #7c3aed);
+    border: none;
+    color: white;
+    font-weight:600;
+}
+
+.btn-purple:hover{
+    opacity:0.9;
+}
+
+#error{
+    font-weight:500;
+}
+</style>
+</head>
+
+<body>
+
+<div class="login-card">
+    <h3>Employee Info System</h3>
+
+    <form onsubmit="return loginUser()">
+        <div class="mb-3">
+            <label>Username</label>
+            <input type="text" id="username" class="form-control" required>
+        </div>
+
+        <div class="mb-3">
+            <label>Password</label>
+            <input type="password" id="password" class="form-control" required>
+        </div>
+
+        <button type="submit" class="btn btn-purple w-100">Login</button>
+    </form>
+
+    <p class="text-danger text-center mt-3" id="error"></p>
+</div>
+
+<script>
+function loginUser() {
+    const user = document.getElementById("username").value;
+    const pass = document.getElementById("password").value;
+
+    if(user === "admin" && pass === "1234"){
+        window.location.href = "dashboard.html";
+        return false;
+    } else {
+        document.getElementById("error").innerText = "Invalid Username or Password";
+        return false;
+    }
+}
+</script>
+
+</body>
+</html>

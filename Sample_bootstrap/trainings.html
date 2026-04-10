@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Trainings</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+body{background:linear-gradient(135deg,#5f2c82,#7c3aed);min-height:100vh;color:white;font-family:'Segoe UI';}
+.navbar{background:rgba(255,255,255,0.1);backdrop-filter:blur(10px);}
+.glass{background:rgba(255,255,255,0.15);backdrop-filter:blur(15px);border-radius:15px;padding:20px;}
+.table thead{background:rgba(255,255,255,0.2);color:white;}
+a{color:white;text-decoration:none;margin-right:15px;}
+.btn-purple{background:#a855f7;color:white;border:none;}
+.btn-purple:hover{opacity:0.9;}
+.form-control{background:rgba(255,255,255,0.2);color:white;border:none;}
+.form-control::placeholder{color:#eee;}
+</style>
+
+<script>
+function deleteRow(btn){
+    if(confirm("Delete this training?")){
+        btn.closest("tr").remove();
+    }
+}
+
+function addTraining(){
+    let id = prompt("Enter ID:");
+    let title = prompt("Enter Training Title:");
+    let date = prompt("Enter Year:");
+
+    if(id && title && date){
+        let table = document.querySelector("tbody");
+        let row = `
+        <tr>
+            <td>${id}</td>
+            <td>${title}</td>
+            <td>${date}</td>
+            <td>
+                <button class="btn btn-sm btn-light" onclick="viewRow(this)">View</button>
+                <button class="btn btn-sm btn-warning" onclick="editRow(this)">Edit</button>
+                <button class="btn btn-sm btn-danger" onclick="deleteRow(this)">Delete</button>
+            </td>
+        </tr>`;
+        table.innerHTML += row;
+    }
+}
+
+function editRow(btn){
+    let row = btn.closest("tr");
+    let cells = row.querySelectorAll("td");
+
+    let newId = prompt("Edit ID:", cells[0].innerText);
+    let newTitle = prompt("Edit Title:", cells[1].innerText);
+    let newDate = prompt("Edit Year:", cells[2].innerText);
+
+    if(newId && newTitle && newDate){
+        cells[0].innerText = newId;
+        cells[1].innerText = newTitle;
+        cells[2].innerText = newDate;
+    }
+}
+
+function viewRow(btn){
+    let row = btn.closest("tr");
+    let id = row.querySelectorAll("td")[0].innerText;
+
+    // redirect to employee info page with ID
+    window.location.href = "employees_info.html?id=" + id;
+}
+</script>
+</head>
+
+<body>
+
+<nav class="navbar p-3">
+<span class="fw-bold">Employee System</span>
+<div class="ms-auto">
+<a href="employees_list.html">Employees</a>
+<a href="employees_info.html">Employee Info</a>
+<a href="trainings.html">Trainings</a>
+<a href="service_record.html">Service Record</a>
+</div>
+</nav>
+
+<div class="container mt-4 glass">
+<div class="d-flex justify-content-between align-items-center mb-3">
+<h3>Trainings</h3>
+<button class="btn btn-purple" onclick="addTraining()">+ Add Training</button>
+</div>
+
+<input class="form-control mb-3" placeholder="Search training">
+
+<table class="table table-borderless text-white align-middle">
+<thead>
+<tr>
+<th>ID</th>
+<th>Title</th>
+<th>Date</th>
+<th>Actions</th>
+</tr>
+</thead>
+<tbody>
+
+<tr>
+<tr>
+<td>1</td>
+<td>Safety Training</td>
+<td>2024</td>
+<td>
+<button class="btn btn-sm btn-light" onclick="viewRow(this)">View</button>
+<button class="btn btn-sm btn-warning" onclick="editRow(this)">Edit</button>
+<button class="btn btn-sm btn-danger" onclick="deleteRow(this)">Delete</button>
+</td>
+</tr>
+
+<tr>
+<td>2</td>
+<td>Leadership</td>
+<td>2025</td>
+<td>
+<button class="btn btn-sm btn-light" onclick="viewRow(this)">View</button>
+<button class="btn btn-sm btn-warning" onclick="editRow(this)">Edit</button>
+<button class="btn btn-sm btn-danger" onclick="deleteRow(this)">Delete</button>
+</td>
+</tr>
+</tr>
+
+</tbody>
+</table>
+</div>
+
+</body>
+</html>

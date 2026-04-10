@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Employee Info System - Modern Dashboard</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+    body {
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        min-height: 100vh;
+        font-family: 'Segoe UI', sans-serif;
+    }
+
+    .navbar {
+        background: rgba(255,255,255,0.1);
+        backdrop-filter: blur(10px);
+    }
+
+    .glass-card {
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(15px);
+        border-radius: 15px;
+        color: white;
+        border: 1px solid rgba(255,255,255,0.2);
+        transition: 0.3s;
+    }
+
+    .glass-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    }
+
+    .metric-number {
+        font-size: 28px;
+        font-weight: bold;
+    }
+
+    .table thead {
+        background: rgba(255,255,255,0.2);
+        color: white;
+    }
+
+    .table tbody tr {
+        color: white;
+    }
+
+    .table tbody tr:hover {
+        background: rgba(255,255,255,0.1);
+    }
+
+    .section-title {
+        color: white;
+        font-weight: 600;
+    }
+
+</style>
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-lg px-4 py-3">
+  <span class="navbar-brand text-white fw-bold">Employee Info System</span>
+  <div class="ms-auto">
+    <a href="dashboard.html" class="text-white text-decoration-none me-4">Dashboard</a>
+    <a href="employees_list.html" class="text-white text-decoration-none me-4">Employees</a>
+    <a href="employees_info.html" class="text-white text-decoration-none me-4">Employee Info</a>
+    <a href="trainings.html" class="text-white text-decoration-none me-4">Trainings</a>
+    <a href="service_record.html" class="text-white text-decoration-none">Service Record</a>
+  </div>
+</nav>
+
+<div class="container mt-4">
+
+    <h3 class="section-title mb-4">Dashboard Overview</h3>
+
+    <div class="row g-4 mb-5">
+
+        <div class="col-md-3">
+            <div class="glass-card p-4 text-center">
+                <div class="metric-number">100</div>
+                <div>Active Employees</div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="glass-card p-4 text-center">
+                <div class="metric-number">50</div>
+                <div>Permanent</div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="glass-card p-4 text-center">
+                <div class="metric-number">50</div>
+                <div>Temporary</div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="glass-card p-4 text-center">
+                <div class="metric-number">55</div>
+                <div>Separated</div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="glass-card p-4">
+        <h5 class="mb-3">Recent Activities</h5>
+        <div class="table-responsive">
+            <table class="table table-borderless mb-0">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Activity</th>
+                        <th>Employee</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Login</td>
+                        <td>John Doe</td>
+                        <td>2024-05-20</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Updated Profile</td>
+                        <td>Jane Smith</td>
+                        <td>2024-05-19</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

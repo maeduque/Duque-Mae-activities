@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Employee Info</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+body{
+  background:linear-gradient(135deg,#5f2c82,#7c3aed);
+  min-height:100vh;color:white;font-family:'Segoe UI';
+}
+.navbar{background:rgba(255,255,255,0.1);backdrop-filter:blur(10px);}
+.glass{background:rgba(255,255,255,0.15);backdrop-filter:blur(15px);border-radius:15px;padding:20px;}
+input{background:rgba(255,255,255,0.2)!important;color:white!important;}
+a{color:white;text-decoration:none;margin-right:15px;}
+</style>
+</head>
+<body>
+
+<nav class="navbar p-3">
+<span class="fw-bold">Employee System</span>
+<div class="ms-auto">
+<a href="employees_list.html">Employees</a>
+<a href="employees_info.html">Employee Info</a>
+<a href="trainings.html">Trainings</a>
+<a href="service_record.html">Service Record</a>
+</div>
+</nav>
+
+<div class="container mt-4 glass">
+<h3>Employee Info</h3>
+
+<input id="empId" class="form-control mb-2" placeholder="Employee ID">
+<input id="lastName" class="form-control mb-2" placeholder="Last Name">
+<input id="firstName" class="form-control mb-2" placeholder="First Name">
+<input id="birthday" class="form-control mb-2" placeholder="Birthday">
+<input id="status" class="form-control mb-2" placeholder="Status">
+
+<button onclick="saveEmployee()" class="btn btn-light mt-2">Save</button>
+</div>
+
+<script>
+function saveEmployee() {
+  let empId = document.getElementById("empId").value;
+  let lastName = document.getElementById("lastName").value;
+  let firstName = document.getElementById("firstName").value;
+  let birthday = document.getElementById("birthday").value;
+  let status = document.getElementById("status").value;
+
+  if(empId=="" || lastName=="" || firstName=="" || birthday=="" || status==""){
+    alert("Please fill up all fields!");
+    return;
+  }
+
+  let employee = {
+    empId,
+    lastName,
+    firstName,
+    birthday,
+    status
+  };
+
+  localStorage.setItem("employee", JSON.stringify(employee));
+  alert("Employee saved successfully!");
+
+  // clear inputs
+  document.getElementById("empId").value="";
+  document.getElementById("lastName").value="";
+  document.getElementById("firstName").value="";
+  document.getElementById("birthday").value="";
+  document.getElementById("status").value="";
+}
+</script>
+
+</body>
+</html>

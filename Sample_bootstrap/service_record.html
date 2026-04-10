@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Service Record</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+body{
+    background: linear-gradient(135deg,#5f2c82,#9f5cff);
+    min-height:100vh;
+    font-family:'Segoe UI',sans-serif;
+    color:white;
+}
+
+/* Navbar */
+.navbar{
+    background: rgba(255,255,255,0.12);
+    backdrop-filter: blur(12px);
+    border-bottom:1px solid rgba(255,255,255,0.2);
+}
+.navbar a{
+    color:white;
+    text-decoration:none;
+    margin-left:15px;
+    font-weight:500;
+}
+.navbar a:hover{
+    text-decoration:underline;
+}
+
+/* Glass container */
+.glass{
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(18px);
+    border-radius:20px;
+    padding:25px;
+    box-shadow:0 8px 25px rgba(0,0,0,0.3);
+}
+
+/* Table */
+.table thead{
+    background: rgba(255,255,255,0.25);
+}
+.table tbody tr:hover{
+    background: rgba(255,255,255,0.12);
+}
+
+/* Inputs */
+.form-control{
+    background: rgba(255,255,255,0.2);
+    color:white;
+    border:none;
+}
+.form-control::placeholder{
+    color:#eee;
+}
+
+/* Buttons */
+.btn-purple{
+    background:#c084fc;
+    color:#2e1065;
+    border:none;
+    font-weight:600;
+}
+.btn-purple:hover{
+    background:#a855f7;
+    color:white;
+}
+</style>
+
+<script>
+function deleteRow(btn){
+    if(confirm("Delete this record?")){
+        btn.closest("tr").remove();
+    }
+}
+
+function addRecord(){
+    let id = prompt("Enter ID:");
+    let position = prompt("Enter Position:");
+    let start = prompt("Enter Start Year:");
+    let end = prompt("Enter End Year:");
+
+    if(id && position && start && end){
+        let table = document.querySelector("tbody");
+        let row = `
+        <tr>
+            <td>${id}</td>
+            <td>${position}</td>
+            <td>${start}</td>
+            <td>${end}</td>
+            <td>
+                <button class="btn btn-sm btn-light" onclick="viewRow(this)">View</button>
+                <button class="btn btn-sm btn-warning" onclick="editRow(this)">Edit</button>
+                <button class="btn btn-sm btn-danger" onclick="deleteRow(this)">Delete</button>
+            </td>
+        </tr>`;
+        table.innerHTML += row;
+    }
+}
+
+function editRow(btn){
+    let row = btn.closest("tr");
+    let cells = row.querySelectorAll("td");
+
+    let newId = prompt("Edit ID:", cells[0].innerText);
+    let newPos = prompt("Edit Position:", cells[1].innerText);
+    let newStart = prompt("Edit Start:", cells[2].innerText);
+    let newEnd = prompt("Edit End:", cells[3].innerText);
+
+    if(newId && newPos && newStart && newEnd){
+        cells[0].innerText = newId;
+        cells[1].innerText = newPos;
+        cells[2].innerText = newStart;
+        cells[3].innerText = newEnd;
+    }
+}
+
+/* 🔥 THIS IS THE IMPORTANT PART */
+function viewRow(btn){
+    let row = btn.closest("tr");
+    let id = row.querySelectorAll("td")[0].innerText;
+
+    window.location.href = "employees_info.html?id=" + id;
+}
+</script>
+</head>
+
+<body>
+
+<nav class="navbar p-3">
+<span class="fw-bold">Employee System</span>
+<div class="ms-auto">
+<a href="employees_list.html">Employees</a>
+<a href="employees_info.html">Employee Info</a>
+<a href="trainings.html">Trainings</a>
+<a href="service_record.html">Service Record</a>
+</div>
+</nav>
+
+<div class="container mt-4 glass">
+
+<div class="d-flex justify-content-between align-items-center mb-3">
+<h3>Service Record</h3>
+<button class="btn btn-purple" onclick="addRecord()">+ Add Record</button>
+</div>
+
+<input class="form-control mb-3" placeholder="Search service record">
+
+<table class="table table-borderless text-white align-middle">
+<thead>
+<tr>
+<th>ID</th>
+<th>Position</th>
+<th>Start</th>
+<th>End</th>
+<th>Actions</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>1</td>
+<td>Manager</td>
+<td>2022</td>
+<td>2024</td>
+<td>
+<button class="btn btn-sm btn-light" onclick="viewRow(this)">View</button>
+<button class="btn btn-sm btn-warning" onclick="editRow(this)">Edit</button>
+<button class="btn btn-sm btn-danger" onclick="deleteRow(this)">Delete</button>
+</td>
+</tr>
+
+<tr>
+<td>2</td>
+<td>Staff</td>
+<td>2020</td>
+<td>2023</td>
+<td>
+<button class="btn btn-sm btn-light" onclick="viewRow(this)">View</button>
+<button class="btn btn-sm btn-warning" onclick="editRow(this)">Edit</button>
+<button class="btn btn-sm btn-danger" onclick="deleteRow(this)">Delete</button>
+</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+
+</body>
+</html>

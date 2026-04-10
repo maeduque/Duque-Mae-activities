@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Employees</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+body{background:linear-gradient(135deg,#5f2c82,#7c3aed);min-height:100vh;color:white;font-family:'Segoe UI';}
+.navbar{background:rgba(255,255,255,0.1);backdrop-filter:blur(10px);}
+.glass{background:rgba(255,255,255,0.15);backdrop-filter:blur(15px);border-radius:15px;padding:20px;}
+.table thead{background:rgba(255,255,255,0.2);color:white;}
+a{color:white;text-decoration:none;margin-right:15px;}
+.btn-purple{background:#a855f7;color:white;border:none;}
+.btn-purple:hover{opacity:0.9;}
+.form-control{background:rgba(255,255,255,0.2);color:white;border:none;}
+.form-control::placeholder{color:#eee;}
+</style>
+
+<script>
+function deleteRow(btn){
+    if(confirm("Delete this employee?")){
+        btn.closest("tr").remove();
+    }
+}
+
+function addEmployee(){
+    let id = prompt("Enter ID:");
+    let last = prompt("Enter Last Name:");
+    let first = prompt("Enter First Name:");
+    let status = prompt("Enter Status (Active/Inactive):");
+
+    if(id && last && first && status){
+        let table = document.querySelector("tbody");
+        let row = `
+        <tr>
+            <td>${id}</td>
+            <td>${last}</td>
+            <td>${first}</td>
+            <td>${status}</td>
+            <td>
+                <button class="btn btn-sm btn-light">View</button>
+                <button class="btn btn-sm btn-warning" onclick="editRow(this)">Edit</button>
+                <button class="btn btn-sm btn-danger" onclick="deleteRow(this)">Delete</button>
+            </td>
+        </tr>`;
+        table.innerHTML += row;
+    }
+}
+
+function editRow(btn){
+    let row = btn.closest("tr");
+    let cells = row.querySelectorAll("td");
+
+    let newId = prompt("Edit ID:", cells[0].innerText);
+    let newLast = prompt("Edit Last Name:", cells[1].innerText);
+    let newFirst = prompt("Edit First Name:", cells[2].innerText);
+    let newStatus = prompt("Edit Status:", cells[3].innerText);
+
+    if(newId && newLast && newFirst && newStatus){
+        cells[0].innerText = newId;
+        cells[1].innerText = newLast;
+        cells[2].innerText = newFirst;
+        cells[3].innerText = newStatus;
+    }
+}
+</script>
+</head>
+
+<body>
+
+<nav class="navbar p-3">
+<span class="fw-bold">Employee System</span>
+<div class="ms-auto">
+<a href="employees_list.html">Employees</a>
+<a href="employees_info.html">Employee Info</a>
+<a href="trainings.html">Trainings</a>
+<a href="service_record.html">Service Record</a>
+</div>
+</nav>
+
+<div class="container mt-4 glass">
+<div class="d-flex justify-content-between align-items-center mb-3">
+<h3>Employee List</h3>
+<button class="btn btn-purple" onclick="addEmployee()">+ Add Employee</button>
+</div>
+
+<input class="form-control mb-3" placeholder="Search employee">
+
+<table class="table table-borderless text-white align-middle">
+<thead>
+<tr>
+<th>ID</th>
+<th>Last</th>
+<th>First</th>
+<th>Status</th>
+<th>Actions</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>1</td>
+<td>Doe</td>
+<td>John</td>
+<td>Active</td>
+<td>
+<a href="employees_info.html" class="btn btn-sm btn-light">View</a>
+<button class="btn btn-sm btn-warning" onclick="editRow(this)">Edit</button>
+<button class="btn btn-sm btn-danger" onclick="deleteRow(this)">Delete</button>
+</td>
+</tr>
+
+<tr>
+<td>2</td>
+<td>Smith</td>
+<td>Jane</td>
+<td>Inactive</td>
+<td>
+<a href="employees_info.html" class="btn btn-sm btn-light">View</a>
+<button class="btn btn-sm btn-warning" onclick="editRow(this)">Edit</button>
+<button class="btn btn-sm btn-danger" onclick="deleteRow(this)">Delete</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+</body>
+</html>
