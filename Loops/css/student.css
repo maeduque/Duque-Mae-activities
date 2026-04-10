@@ -1,53 +1,52 @@
+body {
+    font-family: Arial, sans-serif;
+    background: hwb(330 45% 26%);
+    padding: 20px;
+}
 
-    body {
-        font-family: Arial, sans-serif;
-        background: oklch(76.04% 0.1534 2.254 / 0.726);
-        padding: 30px;
-    }
+.container {
+    background: hwb(339 29% 31%);
+    padding: 20px;
+    max-width: 900px;
+    margin: auto;
+    border-radius: 8px;
+}
 
-    .container {
-        background: hwb(330 51% 3%);
-        padding: 30px;
-        max-width: 700px;
-        margin: auto;
-        border-radius: 8px;
-    }
+h2 {
+    margin-bottom: 10px;
+}
 
-    h2 {
-        margin-bottom: 5px;
-    }
+.top {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
 
-    .top {
-        display: flex;
-        gap: 10px;
-        margin-bottom: 10px;
-    }
+input {
+    flex: 1;
+    padding: 8px;
+}
 
-    input {
-        flex: 1;
-        padding: 5px;
-    }
+button {
+    padding: 8px 12px;
+    cursor: pointer;
+}
 
-    button {
-        padding: 8px 10px;
-        cursor: pointer;
-    }
+.filters {
+    margin-bottom: 10px;
+}
 
-    .filters {
-        margin-bottom: 10px;
-    }
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
 
-    table {
-        width: 80%;
-        border-collapse: collapse;
-    }
+th, td {
+    border: 1px solid oklch(92.6% 0.00954 351.749);
+    padding: 8px;
+    text-align: center;
+}
 
-    th, td {
-        border: 1px solid oklch(74.418% 0.12898 356.425);
-        padding: 8px;
-        text-align: center;
-    }
-
-    th {
-        background: #d464a6;
-    }
+th {
+    background: #c06a92;
+}

@@ -40,7 +40,7 @@ function forOfLoop() {
 function forInLoop() {
   clearOutput("FOR...IN LOOP");
   const person = {
-    name: "MAE",
+    name: "princess",
     age: 19,
     course: "IT"
   };

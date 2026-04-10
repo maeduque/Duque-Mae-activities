@@ -8,13 +8,19 @@
 
 /* ===== Body ===== */
 body {
+<<<<<<< HEAD
     background: linear-gradient(135deg, #f3e8ff, #ede9fe, #e9d5ff);
     color: lab(17.11% 24.99 -6.55);
+=======
+    background: linear-gradient(135deg, #e0f2fe, #e6f7ff, #f0f9ff);
+    color: #1e293b;
+>>>>>>> c667fbf574de21e1cb3245462a6925bc5314bc92
     min-height: 100vh;
 }
 
 /* ===== Login Section ===== */
 .login-container {
+<<<<<<< HEAD
     width: 360px;
     margin: 100px auto;
     padding: 35px;
@@ -29,10 +35,26 @@ body {
     margin-bottom: 25px;
     color: hsl(313, 83%, 58%);
     font-weight: 600;
+=======
+    width: 480px;          /* BIGGER */
+    margin: 120px auto;
+    padding: 45px;
+    background-color: rgba(255, 255, 255, 0.97);
+    border-radius: 24px;
+    box-shadow: 0 20px 40px rgba(56, 189, 248, 0.35);
+    text-align: center;
+}
+
+.login-container h2 {
+    margin-bottom: 30px;
+    font-size: 28px;
+    color: #0284c7;
+>>>>>>> c667fbf574de21e1cb3245462a6925bc5314bc92
 }
 
 .login-container input {
     width: 100%;
+<<<<<<< HEAD
     padding: 12px;
     margin-bottom: 15px;
     border: 1px solid #c4b5fd;
@@ -45,10 +67,18 @@ body {
     border-color: hsl(305, 90%, 66%);
     box-shadow: 0 0 10px #f65ca959;
     outline: none;
+=======
+    padding: 16px;
+    margin-bottom: 18px;
+    border: 1px solid #bae6fd;
+    border-radius: 14px;
+    font-size: 16px;
+>>>>>>> c667fbf574de21e1cb3245462a6925bc5314bc92
 }
 
 .login-container button {
     width: 100%;
+<<<<<<< HEAD
     padding: 12px;
     margin-top: 10px;
     border: none;
@@ -68,10 +98,18 @@ body {
 #message {
     margin-top: 12px;
     font-size: 14px;
+=======
+    padding: 16px;
+    margin-top: 12px;
+    border-radius: 14px;
+    font-size: 18px;
+    font-weight: 600;
+>>>>>>> c667fbf574de21e1cb3245462a6925bc5314bc92
 }
 
 /* ===== Student Section ===== */
 #studentSection {
+<<<<<<< HEAD
     width: 90%;
     max-width: 1000px;
     margin: 40px auto;
@@ -85,12 +123,25 @@ body {
 #studentSection h2 {
     margin-bottom: 20px;
     color: hsl(332, 83%, 58%);
+=======
+    width: 95%;
+    max-width: 1300px;     /* BIG TABLE */
+    margin: 50px auto;
+    padding: 35px;
+    border-radius: 20px;
+}
+
+#studentSection h2 {
+    font-size: 26px;
+    margin-bottom: 25px;
+>>>>>>> c667fbf574de21e1cb3245462a6925bc5314bc92
 }
 
 /* ===== Table ===== */
 table {
     width: 100%;
     border-collapse: collapse;
+<<<<<<< HEAD
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 5px 15px #a72c9c26;
@@ -120,10 +171,26 @@ tr:nth-child(even) {
 tr:hover {
     background-color: #ddd6fe;
     transition: 0.3s;
+=======
+}
+
+th, td {
+    padding: 16px;
+    font-size: 16px;
+}
+
+th {
+    font-size: 15px;
+}
+
+tr:nth-child(even) {
+    background-color: #e0f2fe;
+>>>>>>> c667fbf574de21e1cb3245462a6925bc5314bc92
 }
 
 /* ===== Logout Button ===== */
 .logout-button {
+<<<<<<< HEAD
     padding: 10px 25px;
     background-color: hsl(323, 83%, 58%);
     color: #fff;
@@ -138,11 +205,18 @@ tr:hover {
 .logout-button:hover {
     background-color: #b121b6;
     transform: scale(1.05);
+=======
+    padding: 14px 35px;
+    font-size: 16px;
+    border-radius: 14px;
+    margin-top: 30px;
+>>>>>>> c667fbf574de21e1cb3245462a6925bc5314bc92
 }
 
 /* ===== Responsive ===== */
 @media (max-width: 768px) {
     .login-container {
+<<<<<<< HEAD
         width: 90%;
         margin-top: 60px;
     }
@@ -157,5 +231,18 @@ tr:hover {
 
     .logout-button {
         width: 100%;
+=======
+        width: 92%;
+        padding: 30px;
+    }
+
+    th, td {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    #studentSection h2 {
+        font-size: 22px;
+>>>>>>> c667fbf574de21e1cb3245462a6925bc5314bc92
     }
 }
